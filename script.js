@@ -207,6 +207,10 @@ function resetFilter() {
   flipX = 1;
   flipY = 1;
   filterOptions[0].click();
+  document
+    .querySelector(".quality-options .active")
+    ?.classList.remove("active");
+  document.querySelector(".rotate-options .active")?.classList.remove("active");
   applyFilters();
 }
 
