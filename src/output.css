@@ -16,7 +16,6 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-4xl: 56rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --font-weight-medium: 500;
@@ -223,23 +222,14 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-4xl {
-    width: var(--container-4xl);
-  }
   .w-\[50\%\] {
     width: 50%;
-  }
-  .w-\[500px\] {
-    width: 500px;
   }
   .w-\[calc\(50\%-4px\)\] {
     width: calc(50% - 4px);
   }
   .w-full {
     width: 100%;
-  }
-  .flex-1 {
-    flex: 1;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
