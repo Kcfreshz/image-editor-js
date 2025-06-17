@@ -16,7 +16,10 @@ const fileInput = document.querySelector(".file-input"),
   formatMsg = document.querySelector(".msg"),
   resetFilterBtn = document.querySelector(".reset-filter"),
   selectFormat = document.querySelector(".select-format"),
-  saveImageBtn = document.querySelector(".save-img");
+  saveImageBtn = document.querySelector(".save-img"),
+  year = document.querySelector(".year");
+
+year.textContent = new Date().getFullYear();
 
 let imgRatio,
   imgQuality = 1;
@@ -35,15 +38,17 @@ let brightness = 100,
 // Uploading image file
 function uploadFile(e) {
   const file = e.target.files[0];
-  console.log("clicked");
+
   if (!file) return;
-  // console.log(file);
+
   previewImg.src = URL.createObjectURL(file);
   previewImg.addEventListener("load", () => {
     imgWidth.value = previewImg.naturalWidth;
     imgHeight.value = previewImg.naturalHeight;
     imgRatio = previewImg.naturalWidth / previewImg.naturalHeight;
     document.querySelector(".disable").classList.remove("disable");
+    resetFilterBtn.classList.remove("opacity-50", "pointer-events-none");
+    saveImageBtn.classList.remove("opacity-50", "pointer-events-none");
   });
 }
 
@@ -228,7 +233,7 @@ function saveFinalImage() {
   );
 
   const format = selectFormat.value;
-  console.log("format");
+
   const mime = {
     jpeg: "image/jpeg",
     png: "image/png",
